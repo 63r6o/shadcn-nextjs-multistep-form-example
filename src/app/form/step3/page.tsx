@@ -24,9 +24,6 @@ export default function Step3() {
     defaultValues: formData,
   });
 
-  const errors = form.formState.errors;
-  const hasErrors = Object.keys(errors).length > 0;
-
   const onBack = () => {
     router.push("/form/step2");
   };
@@ -57,10 +54,10 @@ export default function Step3() {
               </FormItem>
             )}
           />
-          {hasErrors && (
+          {!form.formState.isValid && (
             <div className="text-red-500">
               <ul>
-                {Object.entries(errors).map(([field, error]) => (
+                {Object.entries(form.formState.errors).map(([field, error]) => (
                   <li key={field}>
                     {field}: {error.message}
                   </li>

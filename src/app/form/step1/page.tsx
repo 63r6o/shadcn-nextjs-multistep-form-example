@@ -57,7 +57,7 @@ export default function Step1() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder={"your email address"} {...field} />
+                  <Input placeholder="your email address" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
